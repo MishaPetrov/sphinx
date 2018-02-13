@@ -7,6 +7,7 @@ describe('Riddles') do
     it("selects random riddle from the pool") do
       riddles = Riddles.new()
       riddles.select_random
+      # binding.pry
       expect(riddles.riddle_pool.key?(riddles.current_riddle)).to(eq(true))
     end
   end
@@ -14,10 +15,16 @@ describe('Riddles') do
     it("evaluates if user response matches riddle answer") do
       riddles = Riddles.new()
       riddles.select_random
-      correct_answer = riddles.riddle_pool[:current_riddle]
+      correct_answer = riddles.riddle_pool[riddles.current_riddle]
+      # binding.pry
       expect(riddles.evaluate_answer(correct_answer)).to(eq(true))
       expect(riddles.evaluate_answer("incorrect")).to(eq(false))
-
+    end
+    it("is case, non-letter insensitive") do
+      riddles = Riddles.new()
+      riddles.select_random
+      correct_answer = riddles.riddle_pool[riddles.current_riddle]
+      expect(riddles.evaluate_answer(correct_answer.upcase + ".0%")).to(eq(true))
     end
   end
 end

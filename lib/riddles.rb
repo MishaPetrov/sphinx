@@ -13,9 +13,19 @@ class Riddles
   end
 
   def evaluate_answer(user_input)
-    if user_input == @riddle_pool[:@current_riddle]
+    binding.pry
+    if @riddle_pool[@current_riddle].include?(user_input.downcase.split(/[\W\d]+/).join)
       return true
     end
     false
   end
 end
+
+# def evaluate_answer(user_input)
+#   processed_input = user_input.downcase.split(/[\W\d]+/).join
+#   answer = @riddle_pool[:@current_riddle]
+#   if answer.include?(processed_input)
+#     return true
+#   end
+#   false
+# end
