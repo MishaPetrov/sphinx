@@ -33,5 +33,12 @@ describe('Riddles') do
       riddles.evaluate_answer(correct_answer)
       expect(riddles.win_counter).to(eq(1))
     end
+    it("if the answer chosen by the user is incorrect, add +1 to loss counter") do
+      riddles = Riddles.new()
+      riddles.select_random
+      correct_answer = riddles.riddle_pool[riddles.current_riddle]
+      riddles.evaluate_answer("Wrong answer")
+      expect(riddles.loss_counter).to(eq(1))
+    end
   end
 end
