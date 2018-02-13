@@ -11,4 +11,11 @@ class Riddles
   def select_random
     @current_riddle = @riddle_pool.keys.sample
   end
+
+  def evaluate_answer(user_input)
+    if user_input == @riddle_pool[:@current_riddle]
+      return true
+    end
+    false
+  end
 end

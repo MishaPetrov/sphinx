@@ -16,6 +16,8 @@ describe('Riddles') do
       riddles.select_random
       correct_answer = riddles.riddle_pool[:current_riddle]
       expect(riddles.evaluate_answer(correct_answer)).to(eq(true))
+      expect(riddles.evaluate_answer("incorrect")).to(eq(false))
+
     end
   end
 end
