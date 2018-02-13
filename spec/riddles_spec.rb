@@ -26,5 +26,12 @@ describe('Riddles') do
       correct_answer = riddles.riddle_pool[riddles.current_riddle]
       expect(riddles.evaluate_answer(correct_answer.upcase + ".0%")).to(eq(true))
     end
+    it("if the answer chosen by the user is correct, add +1 to win counter") do
+      riddles = Riddles.new()
+      riddles.select_random
+      correct_answer = riddles.riddle_pool[riddles.current_riddle]
+      riddles.evaluate_answer(correct_answer)
+      expect(riddles.win_counter).to(eq(1))
+    end
   end
 end
