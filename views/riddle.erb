@@ -1,0 +1,10 @@
+<% @@riddles.select_random %>
+<h1><%= @@riddles.current_riddle %></h1>
+
+<form action="/submit">
+  <div class="form-group">
+    <label for="user_answer">Answer: </label>
+    <input id="user_answer" name="user_answer" class="form-control" type="text">
+  </div>
+  <button type="submit">Submit</button>
+</form>

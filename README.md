@@ -33,7 +33,7 @@ Ask user some number of riddles (randomly selected from pool), return success if
   2. install bundler gem (execute "gem install bundler")
   3. clone or download triangle repository
   4. run bundler in repository (execute "bundle")
-  5. run anagrams_script.rb (execute "ruby anagrams_script.rb")
+  5. run app.rb (execute "ruby app.rb")
     * if this does not work try updating the shebang ("#!/...") at top of script file with the absolute path to your ruby interpreter
   6. to test: run rspec in main folder (execute "rspec")
 
